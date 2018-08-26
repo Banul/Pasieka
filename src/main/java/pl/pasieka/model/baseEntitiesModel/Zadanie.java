@@ -1,7 +1,7 @@
-package pl.pasieka.baseEntitiesModel;
+package pl.pasieka.model.baseEntitiesModel;
 
-import pl.pasieka.enums.SkalaSzkolna;
-import pl.pasieka.enums.StanZadania;
+import pl.pasieka.model.enums.SkalaSzkolna;
+import pl.pasieka.model.enums.StanZadania;
 
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;

@@ -2,7 +2,7 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.pasieka.enums.SkalaSzkolna;
+import pl.pasieka.model.enums.SkalaSzkolna;
 
 import javax.persistence.*;
 import java.util.List;

@@ -1,6 +1,6 @@
 package pl.pasieka.model;
 
-import pl.pasieka.enums.SkalaSzkolna;
+import pl.pasieka.model.enums.SkalaSzkolna;
 
 import javax.persistence.*;
 

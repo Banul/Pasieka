@@ -2,7 +2,7 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.pasieka.baseEntitiesModel.Zadanie;
+import pl.pasieka.model.baseEntitiesModel.Zadanie;
 
 import javax.persistence.*;
 

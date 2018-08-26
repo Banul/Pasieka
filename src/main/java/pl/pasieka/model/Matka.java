@@ -2,7 +2,7 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.pasieka.enums.PlodnoscMatki;
+import pl.pasieka.model.enums.PlodnoscMatki;
 
 import javax.persistence.*;
 import java.time.Instant;

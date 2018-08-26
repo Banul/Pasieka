@@ -2,7 +2,7 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.pasieka.enums.RodzajeMiodu;
+import pl.pasieka.model.enums.RodzajeMiodu;
 
 import javax.persistence.*;
 

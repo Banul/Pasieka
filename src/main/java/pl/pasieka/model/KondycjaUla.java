@@ -2,7 +2,7 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.pasieka.enums.StanUla;
+import pl.pasieka.model.enums.StanUla;
 
 import javax.persistence.*;
 
