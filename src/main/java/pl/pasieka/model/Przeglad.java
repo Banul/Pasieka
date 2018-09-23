@@ -2,15 +2,17 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.pasieka.model.audit.DateUserAudit;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Getter
 @Setter
 @Entity
 @Table (name = "przeglad")
-public class Przeglad {
+public class Przeglad extends DateUserAudit{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "przeglad_generator")
@@ -25,13 +27,11 @@ public class Przeglad {
     @JoinColumn(name = "ul_id")
     private Ul ul;
 
-    @OneToOne(fetch = FetchType.LAZY,
-              cascade = CascadeType.ALL,
-              mappedBy = "przeglad")
-    private Miod miod;
+    @OneToMany(mappedBy = "przeglad")
+    private List<Miod> miod;
 
-    @OneToOne(fetch = FetchType.LAZY,
-              cascade = CascadeType.ALL,
-              mappedBy = "przeglad")
-    private Pokarm pokarm;
+    @OneToMany(mappedBy = "przeglad")
+    private List<Pokarm> pokarm;
+
+    private Date dataWykonania;
 }

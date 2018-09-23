@@ -19,7 +19,7 @@ import java.time.Instant;
 )
 @Getter
 @Setter
-public class DateAudit {
+public abstract class DateAudit {
 
     @CreatedDate
     private Instant createdAt;

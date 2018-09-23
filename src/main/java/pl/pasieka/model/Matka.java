@@ -2,16 +2,18 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.pasieka.model.audit.DateUserAudit;
 import pl.pasieka.model.enums.PlodnoscMatki;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.util.Date;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "matka")
-public class Matka {
+public class Matka extends DateUserAudit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "matka_generator")
@@ -23,7 +25,7 @@ public class Matka {
     @JoinColumn(name = "ul_id")
     private Ul ul;
 
-    private Instant rokWlozenia;
+    private Date dataWlozenia;
 
     private PlodnoscMatki plodnoscMatki;
 

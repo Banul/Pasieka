@@ -17,12 +17,12 @@ public class Pokarm {
     @Column(name = "id", updatable = false, nullable = false)
     private int id;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "przeglad_id")
     private Przeglad przeglad;
 
-    private String dostarczonyPokarm;
+    private String rodzajPokarmu;
 
-    private double ilosctDostarczonegoPokarmu;
+    private String iloscDostarczonegoPokarmu;
 
 }

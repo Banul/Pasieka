@@ -2,6 +2,7 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.pasieka.model.audit.DateUserAudit;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 @Setter
 @Table
 @Entity(name = "pasieka")
-public class Pasieka {
+public class Pasieka extends DateUserAudit{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pasieka_generator")

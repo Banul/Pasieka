@@ -2,6 +2,8 @@ package pl.pasieka.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.pasieka.model.audit.DateAudit;
+import pl.pasieka.model.audit.DateUserAudit;
 import pl.pasieka.model.enums.StanUla;
 
 import javax.persistence.*;
@@ -10,7 +12,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "kondycja_ula")
-public class KondycjaUla {
+public class KondycjaUla extends DateUserAudit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "kondycja_generator")
@@ -22,6 +24,10 @@ public class KondycjaUla {
     @PrimaryKeyJoinColumn
     private Ul ul;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "stan_ula")
     private StanUla stanUla;
+
+    private String dodatkoweInfo;
 
 }

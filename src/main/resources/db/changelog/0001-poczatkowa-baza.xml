@@ -1,0 +1,231 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="User (generated)" id="1537721079367-1">
+        <createSequence sequenceName="choroba_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-2">
+        <createSequence sequenceName="kondycja_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-3">
+        <createSequence sequenceName="matka_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-4">
+        <createSequence sequenceName="miod_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-5">
+        <createSequence sequenceName="pasieka_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-6">
+        <createSequence sequenceName="pokarm_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-7">
+        <createSequence sequenceName="przeglad_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-8">
+        <createSequence sequenceName="ul_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-9">
+        <createSequence sequenceName="zad_pas_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-10">
+        <createSequence sequenceName="zad_ul_seq"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-11">
+        <createTable tableName="choroba">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="opis_choroby" type="VARCHAR(255)"/>
+            <column name="podjete_dzialania" type="VARCHAR(255)"/>
+            <column name="przeglad_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-12">
+        <createTable tableName="kondycja_ula">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="modified_by" type="BIGINT"/>
+            <column name="dodatkowe_info" type="VARCHAR(255)"/>
+            <column name="stan_ula" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-13">
+        <createTable tableName="matka">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="modified_by" type="BIGINT"/>
+            <column name="data_wlozenia" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="plodnosc_matki" type="INT"/>
+            <column name="rasa" type="VARCHAR(255)"/>
+            <column name="ul_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-14">
+        <createTable tableName="miod">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ilosc_wydobytego_miodu" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rodzaj_miodu" type="VARCHAR(255)"/>
+            <column name="przeglad_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-15">
+        <createTable tableName="pasieka">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="modified_by" type="BIGINT"/>
+            <column name="dodatkowe_informacje" type="VARCHAR(255)"/>
+            <column name="nazwa" type="VARCHAR(255)"/>
+            <column name="numer_ulicy" type="VARCHAR(255)"/>
+            <column name="ulica" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-16">
+        <createTable tableName="pokarm">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ilosc_dostarczonego_pokarmu" type="VARCHAR(255)"/>
+            <column name="rodzaj_pokarmu" type="VARCHAR(255)"/>
+            <column name="przeglad_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-17">
+        <createTable tableName="przeglad">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="modified_by" type="BIGINT"/>
+            <column name="data_wykonania" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="ul_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-18">
+        <createTable tableName="ul">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="modified_by" type="BIGINT"/>
+            <column name="dodatkowe_informacje" type="VARCHAR(255)"/>
+            <column name="liczba_ramek" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sila_rodziny" type="SMALLINT"/>
+            <column name="szerokosc_ramki" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wysokosc_ramki" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pasieka_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-19">
+        <createTable tableName="zadanie_pasieki">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="modified_by" type="BIGINT"/>
+            <column name="czas_zakonczenia" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="opis_zadania" type="VARCHAR(255)"/>
+            <column name="pracochlonnosc" type="INT"/>
+            <column name="stan_zadania" type="VARCHAR(255)"/>
+            <column name="pasieka_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-20">
+        <createTable tableName="zadanie_ula">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="modified_by" type="BIGINT"/>
+            <column name="czas_zakonczenia" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="opis_zadania" type="VARCHAR(255)"/>
+            <column name="pracochlonnosc" type="INT"/>
+            <column name="stan_zadania" type="VARCHAR(255)"/>
+            <column name="ul_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-21">
+        <addPrimaryKey columnNames="id" constraintName="choroba_pkey" tableName="choroba"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-22">
+        <addPrimaryKey columnNames="id" constraintName="kondycja_ula_pkey" tableName="kondycja_ula"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-23">
+        <addPrimaryKey columnNames="id" constraintName="matka_pkey" tableName="matka"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-24">
+        <addPrimaryKey columnNames="id" constraintName="miod_pkey" tableName="miod"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-25">
+        <addPrimaryKey columnNames="id" constraintName="pasieka_pkey" tableName="pasieka"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-26">
+        <addPrimaryKey columnNames="id" constraintName="pokarm_pkey" tableName="pokarm"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-27">
+        <addPrimaryKey columnNames="id" constraintName="przeglad_pkey" tableName="przeglad"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-28">
+        <addPrimaryKey columnNames="id" constraintName="ul_pkey" tableName="ul"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-29">
+        <addPrimaryKey columnNames="id" constraintName="zadanie_pasieki_pkey" tableName="zadanie_pasieki"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-30">
+        <addPrimaryKey columnNames="id" constraintName="zadanie_ula_pkey" tableName="zadanie_ula"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-31">
+        <addForeignKeyConstraint baseColumnNames="przeglad_id" baseTableName="choroba" constraintName="fk39pis7quw7q327gskrv42kfgd" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="przeglad"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-32">
+        <addForeignKeyConstraint baseColumnNames="ul_id" baseTableName="matka" constraintName="fk68lomut8bic520kcxh99v2ji3" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ul"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-33">
+        <addForeignKeyConstraint baseColumnNames="pasieka_id" baseTableName="ul" constraintName="fk92x1h8pv4ad37sjgly1lmliny" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="pasieka"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-34">
+        <addForeignKeyConstraint baseColumnNames="pasieka_id" baseTableName="zadanie_pasieki" constraintName="fkf034rcriboa47o17s9hncpj9h" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="pasieka"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-35">
+        <addForeignKeyConstraint baseColumnNames="ul_id" baseTableName="zadanie_ula" constraintName="fkfifvbuoorbodc4ept3igdfr6g" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ul"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-36">
+        <addForeignKeyConstraint baseColumnNames="przeglad_id" baseTableName="pokarm" constraintName="fkih79ev8pgpmamxdopyne6yi66" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="przeglad"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-37">
+        <addForeignKeyConstraint baseColumnNames="przeglad_id" baseTableName="miod" constraintName="fkjtfa4ttb1bv6kapiy1g5i5gvj" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="przeglad"/>
+    </changeSet>
+    <changeSet author="User (generated)" id="1537721079367-38">
+        <addForeignKeyConstraint baseColumnNames="ul_id" baseTableName="przeglad" constraintName="fks7isqop4umvwkw6dokv6m8imy" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ul"/>
+    </changeSet>
+</databaseChangeLog>

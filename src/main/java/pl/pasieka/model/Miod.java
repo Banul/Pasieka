@@ -18,11 +18,12 @@ public class Miod {
     @Column(name = "id", updatable = false, nullable = false)
     private int id;
 
-    private RodzajeMiodu rodzajeMiodu;
+    @Enumerated(EnumType.STRING)
+    private RodzajeMiodu rodzajMiodu;
 
     private double iloscWydobytegoMiodu;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "przeglad_id")
     private Przeglad przeglad;
 }

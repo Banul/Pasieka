@@ -1,0 +1,4 @@
+id,czas_zakonczenia,opis_zadania,pracochlonnosc,stan_zadania,ul_id
+1,2018-01-01,opis zadania,1,trwajace,1
+2,2018-02-01,opis zadania2,3,zawieszone,1
+3,2018-02-01,opis zadania3,5,zakonczone,2
